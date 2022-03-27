@@ -1,2 +1,2 @@
 import AppHeader from "./AppHeader";
-export default AppHeader
+export default AppHeader;

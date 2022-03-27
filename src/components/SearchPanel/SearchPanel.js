@@ -7,19 +7,19 @@ export default class SearchPanel extends Component {
   };
 
   buttons = [
-    { name: "all", label: "All" },
-    { name: "todo", label: "Active" },
-    { name: "done", label: "Done" },
+    { id: 1, name: "all", label: "All" },
+    { id: 2, name: "todo", label: "Active" },
+    { id: 3, name: "done", label: "Done" },
   ];
 
   render() {
     const { onSearchItem, onClickFilter, filterValue } = this.props;
     const searchText = "Type here to search";
     const classNames = "btn btn-outline-primary";
-    const buttons = this.buttons.map(({ name, label }) => {
+    const buttons = this.buttons.map(({ id, name, label }) => {
       return (
         <button
-          key={name}
+          key={id}
           className={filterValue === name ? classNames + " active" : classNames}
           data-name={name}
         >
@@ -32,6 +32,7 @@ export default class SearchPanel extends Component {
       <div
         className="search-panel"
         onClick={({ target }) => {
+          // eslint-disable-next-line default-case
           switch (target.dataset.name) {
             case "all":
               onClickFilter(target.dataset.name);
@@ -57,13 +58,7 @@ export default class SearchPanel extends Component {
           }}
           value={this.state.searchItem}
         ></input>
-        <div
-          className="btn-group"
-          role="group"
-          aria-label="Basic radio toggle button group"
-        >
-          {buttons}
-        </div>
+        <div className="btn-group">{buttons}</div>
       </div>
     );
   }

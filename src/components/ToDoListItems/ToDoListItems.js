@@ -1,5 +1,5 @@
 import { React, Component } from "react";
-import ToDoListItem from "../ToDoListItem/ToDoListItem";
+import ToDoListItem from "../ToDoListItem";
 import "./ToDoListItems.css";
 
 export default class ToDoList extends Component {
@@ -9,14 +9,17 @@ export default class ToDoList extends Component {
       return (
         <div key={item.id}>
           <li className="list-group-item">
-            <ToDoListItem {...item} onDeleted={()=>{
-              return onDeleted(item.id)
-            }} onToggleImportant={()=>{
-              return onToggleImportant(item.id)
-            }}
-            onToggleDone= {()=>{
-              return onToggleDone(item.id)
-            }}
+            <ToDoListItem
+              {...item}
+              onDeleted={() => {
+                return onDeleted(item.id);
+              }}
+              onToggleImportant={() => {
+                return onToggleImportant(item.id);
+              }}
+              onToggleDone={() => {
+                return onToggleDone(item.id);
+              }}
             />
           </li>
         </div>

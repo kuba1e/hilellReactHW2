@@ -6,12 +6,9 @@
 .search-panel {
   display: flex;
   justify-content: space-between;
+  padding: 10px 0;
 }
 
 .text-inputs {
   width: 100%;
-}
-
-.text-inputs {
-  font-size: 25px;
 }

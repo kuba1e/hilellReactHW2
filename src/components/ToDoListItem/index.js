@@ -1,3 +1,3 @@
 import ToDoListItem from "./ToDoListItem";
 
-export ToDoListItem
+export default ToDoListItem;
