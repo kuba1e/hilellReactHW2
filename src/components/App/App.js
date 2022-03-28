@@ -16,10 +16,9 @@ export default class App extends Component {
   componentDidMount() {
     const toDoData = this.getAllItems();
     if (toDoData) {
-      console.log(toDoData);
       const parsedToDoData = JSON.parse(toDoData);
       this.setState({
-        toDoData: parsedToDoData,
+        toDoData:[ ...parsedToDoData],
       });
     }
   }
